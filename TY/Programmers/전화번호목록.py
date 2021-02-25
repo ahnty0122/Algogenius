@@ -1,20 +1,25 @@
-# 해쉬 구현
+# 해시 구현
 def solution(phone_book):
     answer = True
+    # 해시 생성
     hash_map = {}
     
     for i in phone_book:
         hash_map[i] = 1
     
+    # 포함되어 있는지 확인
     for i in phone_book:
+        # 리스트 생성
         chk = ""
+        # phone_book에 있는 번호들 돌면서 숫자 하나씩 확인
         for j in i:
             chk += j
+            # 숫자가 hash_map / hash_map.keys() 안에 있고 자기 자신이 아니라면 False 반환
             if chk in hash_map and chk != i:
                 answer = False        
     return answer
 
-# collections 이용한 해쉬 구현
+# collections 이용한 해시 구현
 import collections
 def solution(phone_book):
     answer = True
@@ -27,7 +32,7 @@ def solution(phone_book):
                 answer = False
     return answer
 
-# 같은 아이디어로 해쉬 사용하지 않고 list를 사용해 봤으나 효율성에서 문제
+# 같은 아이디어로 해시 사용하지 않고 list를 사용해 봤으나 효율성에서 문제
 # list는 선형 탐색 O(N), 해쉬는 딕셔너리 자료형으로 O(1)
 def solution(phone_book):
     answer = True
