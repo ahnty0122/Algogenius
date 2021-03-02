@@ -1,29 +1,30 @@
 # 정규표현식 사용
-
 import re
-
 def solution(new_id):
     answer = ''
-    # 1단계 & 2단계 : 소문자 치환
-    answer = re.sub('[^a-z\d\-\_\.]', '', new_id.lower())
-    # 3단계 : 마침표 2번 이상 > 하나로
-    answer = re.sub('\.\.+', '.', answer)
-    # 4단계 : 양 끝 마침표 제거
-    answer = re.sub('^\.|\.$', '', answer)
-    # 5단계 : 빈 문자열이면 a 대입
-    if answer == '':
-        answer = 'a'
-    # 6단계 : 길이가 16자 이상이면 1~15자만 남기기 & 맨 끝 마침표 제거
-    answer = re.sub('\.$', '', answer[0:15])
-    # 7단계 : 길이가 3이 될 때까지 반복해서 끝에 붙이기
-    while len(answer) < 3:
-        answer += answer[-1:]
+    # 소문자로 치환
+    new_id = new_id.lower()
+    # 알파벳 소문자, -, ., _, 숫자 빼고 제거
+    new_id = re.sub(r'[^a-z\-\.\_\d]','', new_id)
+    # .이 2개 이상 반복되면 제거
+    new_id = re.sub(r'\.\.+', '.', new_id)
+    # 시작문자가 .이면 제거
+    new_id = re.sub(r'^\.', '', new_id)
+    # 끝문자가 .이면 제거
+    new_id = re.sub(r'\.$', '', new_id)
+    # 아무것도 없으면 a 대입
+    if len(new_id) == 0:
+        new_id = re.sub(r'', 'a', new_id)
+    # 길이가 16이상이면 15개로 자르기 + 끝 문자가 .이면 제거
+    new_id = re.sub('\.$', '', new_id[0:15])
+    # 길이가 2 이하이면 3이 될 때까지 마지막 문자 추가
+    while len(new_id) < 3:
+        new_id += new_id[-1:]
+    answer = new_id
     return answer
 
-
-
+# 정규표현식 다른 풀이
 import re
-
 def solution(new_id):
     st = new_id
     st = st.lower()
@@ -35,6 +36,7 @@ def solution(new_id):
     st = st if len(st) > 2 else st + "".join([st[-1] for i in range(3-len(st))])
     return st
 
+# 정규표현식 사용 X 풀이
 def solution(new_id):
     answer = ''
     # 1
