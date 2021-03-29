@@ -9,7 +9,7 @@ def solution(numbers):
     return answer
 
 
-#### ë‹¤ë¥¸ í’€ì´
+#### ´Ù¸¥ Ç®ÀÌ
 def solution(numbers):
     answer = []
     for i in range(len(numbers)):
@@ -17,6 +17,6 @@ def solution(numbers):
             answer.append(numbers[i] + numbers[j])
     return sorted(list(set(answer)))
 '''
-1. set ìë£Œí˜• ì´ìš©, ì¤‘ë³µëœ list ë„£ìœ¼ë©´ setì€ ì¤‘ë³µëœ ê°’ì€ í•˜ë‚˜ë§Œ í¬í•¨í•´ ì •ì˜í•¨
-2. sorted(list), list.sort() ë‚´ì¥í•¨ìˆ˜
+1. set ÀÚ·áÇü ÀÌ¿ë, Áßº¹µÈ list ³ÖÀ¸¸é setÀº Áßº¹µÈ °ªÀº ÇÏ³ª¸¸ Æ÷ÇÔÇØ Á¤ÀÇÇÔ
+2. sorted(list), list.sort() ³»ÀåÇÔ¼ö
 '''
