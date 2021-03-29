@@ -1,3 +1,4 @@
+# 끝쪽 0으로 채우기
 def solution(triangle):
     triangle = [[0] + line + [0] for line in triangle]
     
