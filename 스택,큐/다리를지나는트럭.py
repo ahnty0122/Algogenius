@@ -1,7 +1,6 @@
 def solution(bridge_length, weight, truck_weights):
     time = 0
     q = [0] * bridge_length
-    
     # 다리를 지나는 동안
     while q:
         # 시간 1초 증가
