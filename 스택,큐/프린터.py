@@ -5,7 +5,6 @@ def solution(priorities, location):
     d = deque([(i, j) for j, i in enumerate(priorities)])
     while d:
         item = d.popleft()
-        print(item)
         if d and max(d)[0] > item[0]:
             d.append(item)
         else:
