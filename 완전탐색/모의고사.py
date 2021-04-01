@@ -18,4 +18,5 @@ def solution(answers):
         if j == max(final):
             answer.append(i + 1)
     return answer
+    
 print(solution([1,3,2,4,2]))
