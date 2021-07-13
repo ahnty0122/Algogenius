@@ -18,7 +18,11 @@ def solution(genres, plays):
             chk += 1
             if chk == 2:
                 break
+    print(dict_rank)
+    print(dict_music)
     return answer
+
+print(solution(["classic", "pop", "classic", "classic", "pop"], [500, 600, 150, 800, 2500]))
 
 # input
 # genres = ["classic", "pop", "classic", "classic", "pop"]    
@@ -30,3 +34,5 @@ def solution(genres, plays):
 # dict_music --> index와 함께 튜플로 사전 value 담기
 # dict_rank --> 플레이 횟수 합한 값 넣기
 # sorted, lambda로 딕셔너리 정렬
+# dict_music[key[0]] = sorted(dict_music[key[0]], key = lambda x : (-x[0], x[1]))
+# 첫번째 인자로 내림차순 정렬 먼저, 두번째 인자로 오름차순 정렬
