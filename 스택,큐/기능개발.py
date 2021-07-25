@@ -1,14 +1,14 @@
 import math
 def solution(progresses, speeds):
     answer = []
-    left = []
+    days = []
     
     for i, j in zip(progresses, speeds):
-        left.append(math.ceil((100 - i) / j))
+        days.append(math.ceil((100 - i) / j))
     
-    chk = left[0]
+    chk = days[0]
     count = 0
-    for j in left:
+    for j in days:
         if chk < j:
             answer.append(count)
             chk = j
