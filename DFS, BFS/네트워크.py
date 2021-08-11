@@ -1,12 +1,12 @@
 def dfs(computers, visited, start):
-        record = [start]
-        while record:
-            j = record.pop()
-            if visited[j] == 0:
-                visited[j] = 1
-            for i in range(0, len(computers)):
-                if computers[j][i] == 1 and visited[i] == 0: # 연결되어 있으면 record에 추가
-                    record.append(i)
+    record = [start]
+    while record:
+        j = record.pop()
+        if visited[j] == 0:
+            visited[j] = 1
+        for i in range(0, len(computers)):
+            if computers[j][i] == 1 and visited[i] == 0: # 연결되어 있으면 record에 추가
+                record.append(i)
                     
 def solution(n, computers):
     answer = 0

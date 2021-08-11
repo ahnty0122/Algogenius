@@ -17,10 +17,9 @@ def solution(numbers, target):
     queue = deque()
     n = len(numbers)
     queue.append([numbers[0],0])  
-    queue.append([-1*numbers[0],0]) # 인덱스를 같이 저장
+    queue.append([-1*numbers[0],0]) # save index
     while queue:
         temp, idx = queue.popleft() 
-        print(idx)
         idx += 1
         if idx < n:
             queue.append([temp+numbers[idx], idx])
