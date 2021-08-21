@@ -35,3 +35,12 @@ def bfs(visited, graph, v):
 dfs(visited_d, graph, v)
 print()
 bfs(visited_b, graph, v)
+
+'''
+4 5 1
+1 2
+1 3
+1 4
+2 4
+3 4
+'''
