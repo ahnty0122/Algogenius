@@ -21,3 +21,22 @@ def solution(n, computers):
 
 print(solution(3, [[1, 1, 0], [1, 1, 1], [0, 1, 1]]))
 # 1
+
+'''
+def dfs(visited, computers, v):
+    visited[v] = 1
+    for i in range(len(computers[v])):
+        if visited[i] == 0 and computers[v][i] == 1:
+            dfs(visited, computers, i)
+
+def solution(n, computers):
+    answer = 0
+    visited = [0] * n
+    for i in range(n):
+        if visited[i] == 0:
+            dfs(visited, computers, i)
+            answer += 1
+        if 0 not in visited:
+            break
+    return answer
+'''
