@@ -2,6 +2,7 @@ def dfs(computers, visited, start):
     record = [start]
     while record:
         j = record.pop()
+        print(record)
         if visited[j] == 0:
             visited[j] = 1
         for i in range(0, len(computers)):
