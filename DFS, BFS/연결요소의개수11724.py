@@ -1,3 +1,5 @@
+# 네트워크 문제랑 비슷
+
 import sys
 sys.setrecursionlimit(10 ** 6) # python 재귀 제한
 read = sys.stdin.readline
