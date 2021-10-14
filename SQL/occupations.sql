@@ -18,4 +18,4 @@ FROM (SELECT CASE WHEN Occupation = 'Doctor' THEN Name END AS Doctor,
              END AS RowNumber
        FROM Occupations
        ORDER BY Name) sub
-GROUP BY RowNumber
+GROUP BY RowNumber;
