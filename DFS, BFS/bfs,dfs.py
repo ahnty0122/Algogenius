@@ -34,7 +34,7 @@ def bfs(visited, graph, v):
 
 dfs(visited_d, graph, v)
 print()
-bfs(visited_b, graph, v)
+# bfs(visited_b, graph, v)
 
 '''
 4 5 1
