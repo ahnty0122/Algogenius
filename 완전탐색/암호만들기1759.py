@@ -22,33 +22,29 @@
 
 
 # 백트래킹 정의 풀이
-L, C = map(int, input().split())
-alpha = list(map(str, input().split()))
-out = []
-all_out = []
-alpha.sort()
+import sys
+input = sys.stdin.readline
 
-def solve(depth, idx, L, C):
-    if depth == L:
-        all_out.append(''.join(map(str, out)))
+l, c = map(int, input().split())
+s = list(map(str, input().split()))
+s.sort()
+
+pre = []
+result = []
+def dfs(depth, idx):
+    if depth == l:
+        result.append("".join(pre))
         return
-    for i in range(idx, C):
-        out.append(alpha[i])
-        solve(depth+1, i+1, L, C)
-        out.pop()
+    for i in range(idx, c):
+        pre.append(s[i])
+        dfs(depth + 1, i + 1)
+        pre.pop()
 
-def password(list_check):
-    for i in list_check:
-        cons = 0
-        vow = 0
-        for j in i:
-            if j in 'aeiou':
-                cons += 1
-            else:
-                vow += 1
-        if cons >= 1 and vow >= 2:
-            print(i)
-    return
+dfs(0, 0)
 
-solve(0, 0, L, C)
-password(all_out)
+for i in result:
+    count_vo = 0
+    for j in i:
+        if j in 'aeiou': count_vo += 1
+    if count_vo >= 1 and count_vo <= (l - 2):
+        print(i)
