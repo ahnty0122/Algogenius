@@ -10,7 +10,7 @@ def dfs(queen, n, row):
             # 대각선에 있으면 안됨
             if abs(queen[x] - queen[row]) == (row - x):
                 break
-        else:
+        else: # for-else 구문: for문에서 break 발생하면 실행되지 않음
             count += dfs(queen, n, row + 1)
     return count
 

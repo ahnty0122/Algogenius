@@ -3,8 +3,6 @@ input = sys.stdin.readline
 
 n, m = map(int, input().split())
 
-visited = [0] * (n + 1)
-
 result = []
 
 def dfs(start):
